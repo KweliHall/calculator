@@ -1,3 +1,4 @@
+const { SSL_OP_NO_QUERY_MTU } = require('constants');
 const readline = require('readline');
 
 const reader = readline.createInterface({
@@ -14,10 +15,26 @@ reader.question("What would you like to calculate?", function(input){
 	num1 = Number(tokens[1]);
 	num2 = Number(tokens[2]);
 
+	if (mathSymbol === "+"){
+		console.log(num1 + num2)
+	}
+	else if (mathSymbol === "-"){
+		console.log(num1 - num2)
+	}
+	else if (mathSymbol === "*"){
+		console.log(num1 * num2)
+	}
+	else if (mathSymbol === "/"){
+		console.log(num1 / num2)
+	}
+	else if (mathSymbol === "sqrt"){
+		console.log(Math.sqrt(num1))
+	}
+	
 
 	// This line closes the connection to the command line interface.
 	reader.close()
 
 });
 
-console.log("mathSymbol");
+
